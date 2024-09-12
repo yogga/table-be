@@ -15,6 +15,13 @@ async function bootstrap() {
     transform: true,   
   }));  
 
+   // Konfigurasi CORS  
+   app.enableCors({  
+    origin: 'http://localhost:3001', // Ganti dengan URL frontend Anda  
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',  
+    credentials: true,  
+  });  
+
   const config = new DocumentBuilder()  
     .setTitle('User API')  
     .setDescription('API for managing users')  
